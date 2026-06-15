@@ -87,4 +87,5 @@
         el.style.transitionDelay = (i % 4 * 0.08) + 's';
         observer.observe(el);
     });
+    
 })();
