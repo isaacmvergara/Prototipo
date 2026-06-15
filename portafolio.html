@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Marketing y Producción | Agencia Gabriela Vergara</title>
+    <meta name="description" content="Portafolio de nuestra agencia de marketing: producción audiovisual, campañas de video y fotografía profesional para marcas.">
+    <meta name="keywords" content="portafolio agencia marketing, producción audiovisual, campañas digitales, fotografía de marca">
+    <meta name="author" content="Gabriela Vergara">
+
+    <meta property="og:title" content="Portafolio de Marketing | Agencia Gabriela Vergara">
+    <meta property="og:description" content="Trabajos destacados de nuestra agencia de marketing y producción de contenido.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Portafolio de Marketing",
+        "description": "Proyectos de marketing digital, producción audiovisual y fotografía.",
+        "provider": { "@type": "MarketingAgency", "name": "Gabriela Vergara" }
+    }
+    </script>
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header id="header">
+    <div class="container nav-wrap">
+        <a href="index.html" class="logo">
+            <span class="logo-mark">GV</span>
+            <span class="logo-text">Gabriela Vergara</span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="portafolio.html" class="active">Portafolio</a>
+            <button class="btn btn-ghost" data-consulta="colaboración creativa">Colaborar</button>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+</header>
+
+<main>
+    <!-- ============== HERO ============== -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="social-row reveal">
+                <a href="https://www.instagram.com/gabrielavvs/?hl=es" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@gabrielavvss" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/gabriela-vergara-07524b201/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span class="section-tag reveal">Portafolio</span>
+            <h1 class="reveal">Nuestro trabajo de <em>marketing</em> y contenido</h1>
+            <p class="lead reveal">Una selección de campañas, reels y fotografía de marca que hemos producido para distintos sectores.</p>
+        </div>
+    </section>
+
+    <!-- ============== PORTAFOLIO ============== -->
+    <section class="portfolio">
+        <div class="container">
+            <div class="filter-bar reveal">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="video">Reels &amp; Video</button>
+                <button class="filter-btn" data-filter="fotografia">Fotografía</button>
+            </div>
+
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- VIDEOS / REELS -->
+                <div class="portfolio-item reveal" data-category="video" data-title="Reel Narrativo | Marca de Moda" data-src="comida1.mp4" data-type="video">
+                    <video src="comida1.mp4" poster="images/port-reel-2.png" preload="metadata" muted loop></video>
+                    <div class="play-icon"><span><i class="fas fa-play"></i></span></div>
+                    <div class="item-overlay"><span class="tag">Reels &amp; Video</span><span class="title">Reel Narrativo · Moda</span></div>
+                </div>
+                <div class="portfolio-item reveal" data-category="video" data-title="Campaña TikTok Viral" data-src="comida2.mp4" data-type="video">
+                    <video src="comida2.mp4" poster="images/port-reel-1.png" preload="metadata" muted loop></video>
+                    <div class="play-icon"><span><i class="fas fa-play"></i></span></div>
+                    <div class="item-overlay"><span class="tag">Reels &amp; Video</span><span class="title">Campaña TikTok Viral</span></div>
+                </div>
+                <div class="portfolio-item reveal" data-category="video" data-title="Contenido Institucional" data-src="comida3.mp4" data-type="video">
+                    <video src="comida3.mp4" poster="images/port-reel-3.png" preload="metadata" muted loop></video>
+                    <div class="play-icon"><span><i class="fas fa-play"></i></span></div>
+                    <div class="item-overlay"><span class="tag">Reels &amp; Video</span><span class="title">Contenido Institucional</span></div>
+                </div>
+
+                <!-- FOTOGRAFÍA -->
+                <div class="portfolio-item reveal" data-category="fotografia" data-title="Gastronomía" data-src="images/port-food-1.png">
+                    <img src="comida1.jpg" alt="Fotografía gastronómica de plato gourmet">
+                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Gastronomía</span></div>
+                </div>
+                <div class="portfolio-item reveal" data-category="fotografia" data-title="Gastronomía" data-src="images/port-food-2.png">
+                    <img src="comida2.jpg" alt="Fotografía de vegetales frescos">
+                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Producto Fresco</span></div>
+                </div>
+                <div class="portfolio-item reveal" data-category="fotografia" data-title="Gastronomía" data-src="images/port-food-3.png">
+                    <img src="comida3.jpg" alt="Fotografía de postre artesanal">
+                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Repostería</span></div>
+                </div>
+                <div class="portfolio-item reveal" data-category="fotografia" data-title="Joyería" data-src="images/port-jewelry-1.png">
+                    <img src="prendas1.PNG" alt="Fotografía de joyería de lujo">
+                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Joyería</span></div>
+                </div>
+                <div class="portfolio-item reveal" data-category="fotografia" data-title="Joyería" data-src="images/port-jewelry-2.png">
+                    <img src="prendas2.JPG" alt="Fotografía de aretes de oro">
+                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Detalle Joyería</span></div>
+                </div>
+                <div class="portfolio-item reveal" data-category="fotografia" data-title="Autos" data-src="images/port-car-1.png">
+                    <img src="prendas3.jpg" alt="Fotografía automotriz de detalle">
+                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Detalle Automotriz</span></div>
+                </div>
+                <div class="portfolio-item reveal" data-category="fotografia" data-title="Autos" data-src="images/port-car-2.png">
+                    <img src="images/port-car-2.png" alt="Fotografía de auto de lujo">
+                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Campaña Automotriz</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== CTA ============== -->
+    <section id="contacto" class="cta">
+        <div class="container cta-inner reveal">
+            <h2>¿Quieres potenciar tu marca con nuestra agencia?</h2>
+            <p>Contáctanos y te mostramos cómo podemos ayudarte a crear contenido que conecte.</p>
+            <button class="btn btn-light" data-consulta="consulta general">Contáctanos ahora <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <span class="logo-mark big">GV</span>
+            <p class="footer-tag">Agencia de Marketing &amp; Producción de Contenido.</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/gabrielavvs/?hl=es" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tiktok.com/@gabrielavvss" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://www.linkedin.com/in/gabriela-vergara-07524b201/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:gabrielavvs@outlook.com"><i class="far fa-envelope"></i> gabrielavvs@outlook.com</a>
+            <a href="https://wa.me/50767558476" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> +507 6755-8476</a>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2025 Gabriela Vergara — Todos los derechos reservados.</div>
+</footer>
+
+<!-- ============== MODAL ============== -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeModalBtn" aria-label="Cerrar">&times;</button>
+        <h3>Solicitar información</h3>
+        <div class="service-name" id="modalServiceName">Proyecto de interés</div>
+        <p>Elige cómo prefieres contactarnos:</p>
+        <div class="modal-actions">
+            <a href="#" id="whatsappLink" class="modal-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" id="emailLink" class="modal-mail"><i class="far fa-envelope"></i> Correo electrónico</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============== LIGHTBOX ============== -->
+<div id="lightbox" class="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-media" id="lightboxMedia"></div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="script.js"></script>
+<script src="portafolio.js"></script>
+</body>
+</html>
