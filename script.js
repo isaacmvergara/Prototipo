@@ -89,3 +89,30 @@
     });
     
 })();
+
+/* ============================================
+   FAQS - ACORDEÓN
+   ============================================ */
+(function () {
+    'use strict';
+
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    if (faqQuestions.length) {
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                
+                // Cerrar otros items abiertos
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle el item actual
+                faqItem.classList.toggle('active');
+            });
+        });
+    }
+})();
