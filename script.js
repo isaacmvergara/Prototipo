@@ -115,4 +115,116 @@
             });
         });
     }
+    document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightboxContent');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeBtn = document.getElementById('lightboxClose');
+        const prevBtn = document.getElementById('lightboxPrev');
+        const nextBtn = document.getElementById('lightboxNext');
+        
+        let currentItems = [];
+        let currentIndex = 0;
+
+        // Abrir lightbox al hacer clic en un item del portafolio
+        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                // Si el clic fue en el botón de play o en el video, no abrir lightbox
+                if (e.target.closest('.play-icon')) return;
+                if (e.target.tagName === 'VIDEO') return;
+                
+                // Obtener todos los items visibles (según el filtro)
+                const visibleItems = document.querySelectorAll('.portfolio-item:not([style*="display: none"])');
+                currentItems = Array.from(visibleItems);
+                
+                // Encontrar el índice del item clickeado
+                currentIndex = currentItems.indexOf(item);
+                
+                if (currentIndex === -1) currentIndex = 0;
+                
+                openLightbox(currentIndex);
+            });
+        });
+
+        function openLightbox(index) {
+            const item = currentItems[index];
+            if (!item) return;
+            
+            const src = item.dataset.src;
+            const title = item.dataset.title || 'Sin título';
+            const type = item.dataset.type || 'imagen';
+            
+            // Limpiar contenido anterior
+            lightboxContent.innerHTML = '';
+            
+            // Crear el elemento según el tipo
+            if (type === 'video') {
+                const video = document.createElement('video');
+                video.src = src;
+                video.controls = true;
+                video.autoplay = true;
+                video.style.maxWidth = '100%';
+                video.style.maxHeight = '90vh';
+                lightboxContent.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = title;
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '90vh';
+                img.style.objectFit = 'contain';
+                lightboxContent.appendChild(img);
+            }
+            
+            lightboxCaption.textContent = title;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Actualizar índice
+            currentIndex = index;
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            // Pausar videos si hay
+            const video = lightboxContent.querySelector('video');
+            if (video) {
+                video.pause();
+            }
+        }
+
+        function navigateLightbox(direction) {
+            if (currentItems.length === 0) return;
+            
+            let newIndex = currentIndex + direction;
+            if (newIndex < 0) newIndex = currentItems.length - 1;
+            if (newIndex >= currentItems.length) newIndex = 0;
+            
+            // Verificar que el item existe y está visible
+            if (currentItems[newIndex]) {
+                openLightbox(newIndex);
+            }
+        }
+
+        // Event listeners
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', () => navigateLightbox(-1));
+        nextBtn.addEventListener('click', () => navigateLightbox(1));
+        
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+        
+        // Cerrar al hacer clic fuera del contenido
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    });
+    
 })();
