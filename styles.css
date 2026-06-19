@@ -1749,4 +1749,33 @@ p {
         font-size: 0.8rem;
     }
 }
+ /* Estilo adicional para que los videos se vean correctamente */
+        .portfolio-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #1a1a1a;
+        }
+
+        .portfolio-item video::-webkit-media-controls {
+            display: none;
+        }
+
+        .portfolio-item video::-webkit-media-controls-enclosure {
+            display: none;
+        }
+        .portfolio-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #1a1a1a; /* Fondo oscuro mientras carga */
+}
+
+/* Oculta los controles del video en el grid */
+.portfolio-item video::-webkit-media-controls {
+    display: none;
+}
+.portfolio-item video::-webkit-media-controls-enclosure {
+    display: none;
+}
     
