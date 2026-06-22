@@ -3,203 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Marketing y Producción | Agencia Gabriela Vergara</title>
-    <meta name="description" content="Portafolio de nuestra agencia de marketing: producción audiovisual, campañas de video y fotografía profesional para marcas.">
-    <meta name="keywords" content="portafolio agencia marketing, producción audiovisual, campañas digitales, fotografía de marca">
+    
+    <!-- ===== TÍTULO OPTIMIZADO ===== -->
+    <title>Portafolio de Marketing Digital y Producción Audiovisual | Gabriela Vergara</title>
+    
+    <!-- ===== META DESCRIPTION OPTIMIZADO ===== -->
+    <meta name="description" content="Descubre nuestro portafolio de marketing digital: producción audiovisual, campañas en redes sociales, fotografía profesional y estrategias de contenido para marcas. ¡Conoce nuestro trabajo!">
+    
+    <!-- ===== PALABRAS CLAVE ===== -->
+    <meta name="keywords" content="portafolio marketing digital, producción audiovisual, campañas redes sociales, fotografía de marca, agencia marketing Panamá, contenido digital, reels profesionales">
+    
+    <!-- ===== AUTOR ===== -->
     <meta name="author" content="Gabriela Vergara">
-
-    <meta property="og:title" content="Portafolio de Marketing | Agencia Gabriela Vergara">
-    <meta property="og:description" content="Trabajos destacados de nuestra agencia de marketing y producción de contenido.">
+    
+    <!-- ===== ROBOTS ===== -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://gabrielavargara.com/portafolio.html">
+    
+    <!-- ===== OPEN GRAPH (Facebook, LinkedIn) ===== -->
+    <meta property="og:title" content="Portafolio de Marketing Digital y Producción Audiovisual | Gabriela Vergara">
+    <meta property="og:description" content="Descubre nuestro portafolio: producción audiovisual, fotografía profesional y estrategias de contenido para marcas.">
     <meta property="og:type" content="website">
-
+    <meta property="og:url" content="https://gabrielavargara.com/portafolio.html">
+    <meta property="og:image" content="https://gabrielavargara.com/images/og-portafolio.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- ===== TWITTER CARDS ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portafolio de Marketing Digital y Producción Audiovisual">
+    <meta name="twitter:description" content="Descubre nuestro portafolio de producción audiovisual, fotografía y marketing digital para marcas.">
+    <meta name="twitter:image" content="https://gabrielavargara.com/images/og-portafolio.jpg">
+    
+    <!-- ===== FUENTES ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ===== FONT AWESOME ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ===== CSS PRINCIPAL ===== -->
     <link rel="stylesheet" href="styles.css">
-
+    
+    <!-- ===== SCHEMA.ORG - DATOS ESTRUCTURADOS ===== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Portafolio de Marketing",
-        "description": "Proyectos de marketing digital, producción audiovisual y fotografía.",
-        "provider": { "@type": "MarketingAgency", "name": "Gabriela Vergara" }
+        "name": "Portafolio de Marketing Digital y Producción Audiovisual",
+        "description": "Proyectos de marketing digital, producción audiovisual y fotografía profesional para marcas.",
+        "url": "https://gabrielavargara.com/portafolio.html",
+        "about": {
+            "@type": "Service",
+            "name": "Marketing Digital y Producción de Contenido",
+            "provider": {
+                "@type": "MarketingAgency",
+                "name": "Gabriela Vergara",
+                "url": "https://gabrielavargara.com",
+                "telephone": "+50767558476",
+                "email": "gabrielavvs@outlook.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "Panamá"
+                }
+            }
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Inicio",
+                    "item": "https://gabrielavargara.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Portafolio",
+                    "item": "https://gabrielavargara.com/portafolio.html"
+                }
+            ]
+        }
     }
     </script>
 </head>
 <body>
 
 <!-- ============== HEADER ============== -->
-<header id="header">
+<header id="header" role="banner">
     <div class="container nav-wrap">
-        <a href="index.html" class="logo">
+        <a href="index.html" class="logo" aria-label="Gabriela Vergara - Inicio">
             <span class="logo-mark">GV</span>
             <span class="logo-text">Gabriela Vergara</span>
         </a>
-        <nav class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks" role="navigation" aria-label="Navegación principal">
             <a href="index.html">Inicio</a>
             <a href="servicios.html">Servicios</a>
-            <a href="portafolio.html" class="active">Portafolio</a>
+            <a href="portafolio.html" class="active" aria-current="page">Portafolio</a>
             <button class="btn btn-ghost" data-consulta="colaboración creativa">Colaborar</button>
         </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </button>
     </div>
     <div class="menu-overlay" id="menuOverlay"></div>
 </header>
 
-<main>
+<main role="main">
     <!-- ============== HERO ============== -->
-    <section class="page-hero">
+    <section class="page-hero" aria-labelledby="hero-title">
         <div class="container">
             <div class="social-row reveal">
-                <a href="https://www.instagram.com/gabrielavvs/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@gabrielavvss" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.linkedin.com/in/gabriela-vergara-07524b201/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/gabrielavvs/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@gabrielavvss" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/gabriela-vergara-07524b201/" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span class="section-tag reveal">Portafolio</span>
-            <h1 class="reveal">Nuestro trabajo de <em>marketing</em> y contenido</h1>
-            <p class="lead reveal">Una selección de campañas, reels y fotografía de marca que hemos producido para distintos sectores.</p>
+            <h1 class="reveal" id="hero-title">Nuestro trabajo de <em>marketing</em> y contenido</h1>
+            <p class="lead reveal">Una selección de campañas, reels y fotografía de marca que hemos producido para distintos sectores. Conoce la calidad y creatividad de nuestros proyectos.</p>
         </div>
     </section>
 
     <!-- ============== PORTAFOLIO ============== -->
-    <section class="portfolio">
+    <section class="portfolio" aria-labelledby="portfolio-title">
         <div class="container">
-            <div class="filter-bar reveal">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="video">Reels &amp; Video</button>
-                <button class="filter-btn" data-filter="fotografia">Fotografía</button>
+            <h2 id="portfolio-title" class="sr-only">Galería de proyectos</h2>
+            
+            <div class="filter-bar reveal" role="tablist" aria-label="Filtrar proyectos">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+                <button class="filter-btn" data-filter="video" role="tab" aria-selected="false">Reels &amp; Video</button>
+                <button class="filter-btn" data-filter="fotografia" role="tab" aria-selected="false">Fotografía</button>
             </div>
 
             <div class="portfolio-grid" id="portfolioGrid">
-                <!-- VIDEOS / REELS - SIN POSTER, USA EL PRIMER FOTOGRAMA -->
-                <div class="portfolio-item reveal" data-category="video" data-title="Reel Narrativo · Moda" data-src="comida1.mp4" data-type="video">
-                    <video src="comida1.mp4" preload="metadata" muted loop playsinline></video>
-                    <div class="play-icon"><span><i class="fas fa-play"></i></span></div>
-                    <div class="item-overlay"><span class="tag">Reels &amp; Video</span><span class="title">Reel Narrativo · Moda</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="video" data-title="Campaña TikTok Viral" data-src="comida2.mp4" data-type="video">
-                    <video src="comida2.mp4" preload="metadata" muted loop playsinline></video>
-                    <div class="play-icon"><span><i class="fas fa-play"></i></span></div>
-                    <div class="item-overlay"><span class="tag">Reels &amp; Video</span><span class="title">Campaña TikTok Viral</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="video" data-title="Contenido Institucional" data-src="comida3.mp4" data-type="video">
-                    <video src="comida3.mp4" preload="metadata" muted loop playsinline></video>
-                    <div class="play-icon"><span><i class="fas fa-play"></i></span></div>
-                    <div class="item-overlay"><span class="tag">Reels &amp; Video</span><span class="title">Contenido Institucional</span></div>
-                </div>
+                <!-- ===== VIDEOS / REELS ===== -->
+                <article class="portfolio-item reveal" data-category="video" data-title="Reel Narrativo · Moda" data-src="comida1.mp4" data-type="video" aria-label="Reel narrativo de moda">
+                    <video src="comida1.mp4" preload="metadata" muted loop playsinline aria-label="Video reel de moda"></video>
+                    <div class="play-icon"><span><i class="fas fa-play" aria-hidden="true"></i></span></div>
+                    <div class="item-overlay">
+                        <span class="tag">Reels &amp; Video</span>
+                        <span class="title">Reel Narrativo · Moda</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="video" data-title="Campaña TikTok Viral" data-src="comida2.mp4" data-type="video" aria-label="Campaña viral de TikTok">
+                    <video src="comida2.mp4" preload="metadata" muted loop playsinline aria-label="Video campaña TikTok"></video>
+                    <div class="play-icon"><span><i class="fas fa-play" aria-hidden="true"></i></span></div>
+                    <div class="item-overlay">
+                        <span class="tag">Reels &amp; Video</span>
+                        <span class="title">Campaña TikTok Viral</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="video" data-title="Contenido Institucional" data-src="comida3.mp4" data-type="video" aria-label="Contenido institucional">
+                    <video src="comida3.mp4" preload="metadata" muted loop playsinline aria-label="Video institucional"></video>
+                    <div class="play-icon"><span><i class="fas fa-play" aria-hidden="true"></i></span></div>
+                    <div class="item-overlay">
+                        <span class="tag">Reels &amp; Video</span>
+                        <span class="title">Contenido Institucional</span>
+                    </div>
+                </article>
 
-                <!-- FOTOGRAFÍA - LÍNEA 1 -->
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Gastronomía" data-src="comida1.jpg">
-                    <img src="comida1.jpg" alt="Fotografía gastronómica de plato gourmet">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Gastronomía</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Producto Fresco" data-src="comida2.jpg">
-                    <img src="comida2.jpg" alt="Fotografía de vegetales frescos">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Producto Fresco</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Repostería" data-src="comida3.jpg">
-                    <img src="comida3.jpg" alt="Fotografía de postre artesanal">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Repostería</span></div>
-                </div>
+                <!-- ===== FOTOGRAFÍA - GASTRONOMÍA ===== -->
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Gastronomía Gourmet" data-src="comida1.jpg" aria-label="Fotografía gastronómica">
+                    <img src="comida1.jpg" alt="Plato gourmet con presentación profesional" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Gastronomía</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Productos Frescos" data-src="comida2.jpg" aria-label="Fotografía de productos frescos">
+                    <img src="comida2.jpg" alt="Vegetales frescos con colores vibrantes" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Producto Fresco</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Repostería Artesanal" data-src="comida3.jpg" aria-label="Fotografía de repostería">
+                    <img src="comida3.jpg" alt="Postre artesanal con detalles decorativos" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Coctel</span>
+                    </div>
+                </article>
 
-                <!-- FOTOGRAFÍA - LÍNEA 2 -->
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Joyería" data-src="prendas1.PNG">
-                    <img src="prendas1.PNG" alt="Fotografía de joyería de lujo">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Joyería</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Detalle Joyería" data-src="prendas2.JPG">
-                    <img src="prendas2.JPG" alt="Fotografía de aretes de oro">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Detalle Joyería</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Anillo de Compromiso" data-src="prendas3.jpg">
-                    <img src="prendas3.jpg" alt="Fotografía de anillo de compromiso">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Anillo de Compromiso</span></div>
-                </div>
+                <!-- ===== FOTOGRAFÍA - JOYERÍA ===== -->
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Joyería de Lujo" data-src="prendas1.PNG" aria-label="Fotografía de joyería">
+                    <img src="prendas1.PNG" alt="Joyería de lujo con acabados brillantes" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Anillos</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Detalles de Joyería" data-src="prendas2.JPG" aria-label="Detalle de joyería">
+                    <img src="prendas2.JPG" alt="Aretes de oro con detalles finos" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Detalle Joyería</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Anillo de Compromiso" data-src="prendas3.jpg" aria-label="Fotografía de anillo">
+                    <img src="prendas3.jpg" alt="Anillo de compromiso con diamante" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Colección Joyería</span>
+                    </div>
+                </article>
 
-                <!-- FOTOGRAFÍA - LÍNEA 3 -->
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Deportivo de Lujo" data-src="A1.JPG">
-                    <img src="A1.JPG" alt="Fotografía de auto deportivo de lujo">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Deportivo de Lujo</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Clásico de Lujo" data-src="A6.JPG">
-                    <img src="A6.JPG" alt="Fotografía de auto clásico de lujo">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Clásico de Lujo</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="SUV de Lujo" data-src="A5.JPG">
-                    <img src="A5.JPG" alt="Fotografía de SUV de lujo">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">SUV de Lujo</span></div>
-                </div>
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Colección Joyería" data-src="prendas6.JPG" aria-label="Colección de joyería">
+                    <img src="prendas6.JPG" alt="Colección de joyería de lujo" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Pulseras</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Aretes de Oro" data-src="prendas4.JPG" aria-label="Aretes de oro">
+                    <img src="prendas4.JPG" alt="Aretes de oro con diseño elegante" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Collares</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Joyas Finas" data-src="prendas5.JPG" aria-label="Joyas finas">
+                    <img src="prendas5.JPG" alt="Joyas finas con piedras preciosas" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Joyas Finas</span>
+                    </div>
+                </article>
 
-                <!-- FOTOGRAFÍA - LÍNEA 6 - NATURALEZA -->
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Paisajes" data-src="naturaleza1.jpg">
-                    <img src="vegetales1.png" alt="Fotografía de paisaje natural">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Paisajes</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Flora" data-src="naturaleza2.jpg">
-                    <img src="vagetales2.png" alt="Fotografía de flora y plantas">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Flora</span></div>
-                </div>
-                <div class="portfolio-item reveal" data-category="fotografia" data-title="Fauna" data-src="naturaleza3.jpg">
-                    <img src="vegetales3.jpg" alt="Fotografía de fauna silvestre">
-                    <div class="item-overlay"><span class="tag">Fotografía</span><span class="title">Fauna</span></div>
-                </div>
+                <!-- ===== FOTOGRAFÍA - AUTOMOTRIZ ===== -->
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Deportivo de Lujo" data-src="A1.JPG" aria-label="Fotografía de auto deportivo">
+                    <img src="A1.JPG" alt="Auto deportivo de lujo en movimiento" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Deportivo</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Clásico de Lujo" data-src="A6.JPG" aria-label="Fotografía de auto clásico">
+                    <img src="A6.JPG" alt="Auto clásico de lujo restaurado" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Clásico de Lujo</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="SUV de Lujo" data-src="A5.JPG" aria-label="Fotografía de SUV">
+                    <img src="A5.JPG" alt="SUV de lujo en entorno natural" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Interior</span>
+                    </div>
+                </article>
+
+                <!-- ===== FOTOGRAFÍA - NATURALEZA ===== -->
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Paisajes Naturales" data-src="vegetales1.png" aria-label="Fotografía de paisaje">
+                    <img src="vegetales1.png" alt="Paisaje natural con vegetación exuberante" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Vegetales</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Flora Exótica" data-src="vegetales2.png" aria-label="Fotografía de flora">
+                    <img src="vegetales2.png" alt="Flora exótica con colores vibrantes" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Fruta</span>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item reveal" data-category="fotografia" data-title="Fauna Silvestre" data-src="vegetales3.jpg" aria-label="Fotografía de fauna">
+                    <img src="vegetales3.jpg" alt="Fauna silvestre en su hábitat natural" loading="lazy" width="400" height="300">
+                    <div class="item-overlay">
+                        <span class="tag">Fotografía</span>
+                        <span class="title">Frutas</span>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ============== CTA ============== -->
-    <section id="contacto" class="cta cta-full-red">
+    <section id="contacto" class="cta cta-full-red" aria-labelledby="cta-title">
         <div class="container cta-inner-full reveal">
-            <h2>¿Listo para potenciar tu marca?</h2>
+            <h2 id="cta-title">¿Listo para potenciar tu marca?</h2>
             <p>Contáctanos y empecemos a trabajar juntos en el contenido que tu marca merece.</p>
-            <button class="btn btn-light" data-consulta="consulta general">Contáctanos ahora <i class="fas fa-arrow-right"></i></button>
+            <button class="btn btn-light" data-consulta="consulta general">Contáctanos ahora <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
         </div>
     </section>
 </main>
 
 <!-- ============== FOOTER ============== -->
-<footer>
+<footer role="contentinfo">
     <div class="container footer-grid">
         <div>
             <span class="logo-mark big">GV</span>
             <p class="footer-tag">Agencia de Marketing &amp; Producción de Contenido.</p>
         </div>
         <div class="footer-social">
-            <a href="https://www.instagram.com/gabrielavvs/?hl=es" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://www.tiktok.com/@gabrielavvss" target="_blank" rel="noopener noreferrer">TikTok</a>
-            <a href="https://www.linkedin.com/in/gabriela-vergara-07524b201/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/gabrielavvs/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://www.tiktok.com/@gabrielavvss" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+            <a href="https://www.linkedin.com/in/gabriela-vergara-07524b201/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
         </div>
         <div class="footer-contact">
-            <a href="mailto:gabrielavvs@outlook.com"><i class="far fa-envelope"></i> gabrielavvs@outlook.com</a>
-            <a href="https://wa.me/50767558476" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> +507 6755-8476</a>
+            <a href="mailto:gabrielavvs@outlook.com" aria-label="Enviar correo electrónico"><i class="far fa-envelope" aria-hidden="true"></i> gabrielavvs@outlook.com</a>
+            <a href="https://wa.me/50767558476" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> +507 6755-8476</a>
         </div>
     </div>
     <div class="footer-bottom">© 2025 Gabriela Vergara — Todos los derechos reservados.</div>
 </footer>
 
 <!-- ============== MODAL ============== -->
-<div id="contactModal" class="modal">
+<div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
-        <button class="modal-close" id="closeModalBtn" aria-label="Cerrar">&times;</button>
-        <h3>Solicitar información</h3>
+        <button class="modal-close" id="closeModalBtn" aria-label="Cerrar modal">&times;</button>
+        <h3 id="modal-title">Solicitar información</h3>
         <div class="service-name" id="modalServiceName">Proyecto de interés</div>
         <p>Elige cómo prefieres contactarnos:</p>
         <div class="modal-actions">
-            <a href="#" id="whatsappLink" class="modal-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="#" id="emailLink" class="modal-mail"><i class="far fa-envelope"></i> Correo electrónico</a>
+            <a href="#" id="whatsappLink" class="modal-wa" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+            <a href="#" id="emailLink" class="modal-mail" aria-label="Contactar por correo electrónico"><i class="far fa-envelope" aria-hidden="true"></i> Correo electrónico</a>
         </div>
     </div>
 </div>
 
 <!-- ============== LIGHTBOX ============== -->
-<div id="lightbox" class="lightbox" data-testid="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+<div id="lightbox" class="lightbox" data-testid="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente imagen"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
     <div class="lightbox-content" id="lightboxContent"></div>
     <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>

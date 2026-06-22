@@ -1,5 +1,5 @@
 /* ============================================
-   GABRIELA VERGARA — SCRIPT COMPLETO
+   PORTAFOLIO — SCRIPT COMPLETO
    ============================================ */
 
 (function () {
@@ -16,15 +16,19 @@
     const menuOverlay = document.getElementById('menuOverlay');
 
     function openMenu() {
+        if (!navLinks || !menuOverlay) return;
         navLinks.classList.add('active');
         menuOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
     }
 
     function closeMenu() {
+        if (!navLinks || !menuOverlay) return;
         navLinks.classList.remove('active');
         menuOverlay.classList.remove('active');
         document.body.style.overflow = '';
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
     }
 
     if (menuToggle) {
@@ -46,6 +50,12 @@
 
     window.addEventListener('resize', function () {
         if (window.innerWidth > 800) closeMenu();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navLinks && navLinks.classList.contains('active')) {
+            closeMenu();
+        }
     });
 
     /* ============================================
@@ -83,7 +93,6 @@
         }
     }
 
-    // Cualquier botón con data-consulta abre el modal
     document.querySelectorAll('[data-consulta]').forEach(function (btn) {
         btn.addEventListener('click', function () {
             openModal(this.getAttribute('data-consulta'));
@@ -156,14 +165,12 @@
             question.addEventListener('click', function () {
                 var faqItem = this.parentElement;
 
-                // Cerrar otros items abiertos
                 document.querySelectorAll('.faq-item').forEach(function (item) {
                     if (item !== faqItem && item.classList.contains('active')) {
                         item.classList.remove('active');
                     }
                 });
 
-                // Toggle el item actual
                 faqItem.classList.toggle('active');
             });
         });
@@ -191,10 +198,10 @@
     });
 
     /* ============================================
-       PORTAFOLIO — LIGHTBOX CON VIDEO
+       PORTAFOLIO — LIGHTBOX CON VIDEO (CORREGIDO)
        ============================================ */
     var lightbox = document.getElementById('lightbox');
-    var lightboxMedia = document.getElementById('lightboxMedia');
+    var lightboxContent = document.getElementById('lightboxContent'); // CAMBIADO: antes era lightboxMedia
     var lightboxCaption = document.getElementById('lightboxCaption');
     var closeBtnLightbox = document.getElementById('lightboxClose');
     var prevBtnLightbox = document.getElementById('lightboxPrev');
@@ -207,8 +214,8 @@
         var current = gallery[index];
         if (!current) return;
 
-        // Limpiar contenido anterior
-        lightboxMedia.innerHTML = '';
+        if (!lightboxContent) return;
+        lightboxContent.innerHTML = '';
 
         if (current.type === 'video') {
             var video = document.createElement('video');
@@ -218,33 +225,48 @@
             video.style.maxWidth = '90vw';
             video.style.maxHeight = '80vh';
             video.style.borderRadius = '16px';
-            lightboxMedia.appendChild(video);
+            lightboxContent.appendChild(video);
         } else {
             var img = document.createElement('img');
             img.src = current.src;
-            img.alt = current.title;
+            img.alt = current.title || 'Proyecto';
             img.style.maxWidth = '90vw';
             img.style.maxHeight = '80vh';
             img.style.borderRadius = '16px';
             img.style.objectFit = 'contain';
-            lightboxMedia.appendChild(img);
+            lightboxContent.appendChild(img);
         }
 
-        lightboxCaption.textContent = current.title;
+        if (lightboxCaption) {
+            lightboxCaption.textContent = current.title || 'Proyecto';
+        }
     }
 
     function openLightbox(startIndex, collection) {
         gallery = collection;
         index = startIndex;
         renderLightbox();
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        if (lightbox) {
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     function closeLightbox() {
-        lightbox.classList.remove('open');
-        document.body.style.overflow = '';
-        lightboxMedia.innerHTML = '';
+        if (lightbox) {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        if (lightboxContent) {
+            lightboxContent.innerHTML = '';
+        }
+        // Pausar video si existe
+        if (lightboxContent) {
+            var video = lightboxContent.querySelector('video');
+            if (video) {
+                video.pause();
+            }
+        }
     }
 
     function nextLightbox() {
@@ -261,12 +283,12 @@
         }
     }
 
-    // Evento de clic en items del portafolio
+    // Evento de clic en items del portafolio - CORREGIDO
     items.forEach(function (item) {
-        item.addEventListener('click', function () {
+        item.addEventListener('click', function (e) { // CAMBIADO: e como parámetro
             // Si el clic fue en el botón de play o en el video, no abrir lightbox
-            if (event.target.closest('.play-icon')) return;
-            if (event.target.tagName === 'VIDEO') return;
+            if (e.target.closest('.play-icon')) return;
+            if (e.target.tagName === 'VIDEO') return;
 
             var visible = items.filter(function (el) {
                 return el.style.display !== 'none';
@@ -280,7 +302,7 @@
                 };
             });
 
-            var startIndex = visible.indexOf(item);
+            var startIndex = visible.indexOf(this); // CAMBIADO: this en lugar de item
             if (startIndex !== -1) openLightbox(startIndex, collection);
         });
     });
