@@ -198,144 +198,135 @@
     });
 
     /* ============================================
-       PORTAFOLIO — LIGHTBOX CON VIDEO (CORREGIDO)
+       PORTAFOLIO - LIGHTBOX CON VIDEO
        ============================================ */
-    var lightbox = document.getElementById('lightbox');
-    var lightboxContent = document.getElementById('lightboxContent'); // CAMBIADO: antes era lightboxMedia
-    var lightboxCaption = document.getElementById('lightboxCaption');
-    var closeBtnLightbox = document.getElementById('lightboxClose');
-    var prevBtnLightbox = document.getElementById('lightboxPrev');
-    var nextBtnLightbox = document.getElementById('lightboxNext');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtnLightbox = document.getElementById('lightboxClose');
+    const prevBtnLightbox = document.getElementById('lightboxPrev');
+    const nextBtnLightbox = document.getElementById('lightboxNext');
 
-    var gallery = [];
-    var index = 0;
+    if (lightbox && lightboxContent) {
+        let currentItems = [];
+        let currentIndex = 0;
 
-    function renderLightbox() {
-        var current = gallery[index];
-        if (!current) return;
+        // Abrir lightbox al hacer clic en un item del portafolio
+        document.querySelectorAll('.portfolio-item').forEach(function (item) {
+            item.addEventListener('click', function (e) {
+                // Si el clic fue en el botón de play o en el video, no abrir lightbox
+                if (e.target.closest('.play-icon')) return;
+                if (e.target.tagName === 'VIDEO') return;
 
-        if (!lightboxContent) return;
-        lightboxContent.innerHTML = '';
+                // Obtener todos los items visibles (según el filtro)
+                const visibleItems = document.querySelectorAll('.portfolio-item:not([style*="display: none"])');
+                currentItems = Array.from(visibleItems);
 
-        if (current.type === 'video') {
-            var video = document.createElement('video');
-            video.src = current.src;
-            video.controls = true;
-            video.autoplay = true;
-            video.style.maxWidth = '90vw';
-            video.style.maxHeight = '80vh';
-            video.style.borderRadius = '16px';
-            lightboxContent.appendChild(video);
-        } else {
-            var img = document.createElement('img');
-            img.src = current.src;
-            img.alt = current.title || 'Proyecto';
-            img.style.maxWidth = '90vw';
-            img.style.maxHeight = '80vh';
-            img.style.borderRadius = '16px';
-            img.style.objectFit = 'contain';
-            lightboxContent.appendChild(img);
-        }
+                // Encontrar el índice del item clickeado
+                currentIndex = currentItems.indexOf(this);
 
-        if (lightboxCaption) {
-            lightboxCaption.textContent = current.title || 'Proyecto';
-        }
-    }
+                if (currentIndex === -1) currentIndex = 0;
 
-    function openLightbox(startIndex, collection) {
-        gallery = collection;
-        index = startIndex;
-        renderLightbox();
-        if (lightbox) {
-            lightbox.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-    }
+                openLightbox(currentIndex);
+            });
+        });
 
-    function closeLightbox() {
-        if (lightbox) {
-            lightbox.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-        if (lightboxContent) {
+        function openLightbox(index) {
+            const item = currentItems[index];
+            if (!item) return;
+
+            const src = item.dataset.src;
+            const title = item.dataset.title || 'Sin título';
+            const type = item.dataset.type || 'imagen';
+
+            // Limpiar contenido anterior
             lightboxContent.innerHTML = '';
+
+            // Crear el elemento según el tipo
+            if (type === 'video') {
+                const video = document.createElement('video');
+                video.src = src;
+                video.controls = true;
+                video.autoplay = true;
+                video.style.maxWidth = '100%';
+                video.style.maxHeight = '90vh';
+                video.style.borderRadius = '12px';
+                lightboxContent.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = title;
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '90vh';
+                img.style.objectFit = 'contain';
+                img.style.borderRadius = '12px';
+                lightboxContent.appendChild(img);
+            }
+
+            if (lightboxCaption) {
+                lightboxCaption.textContent = title;
+            }
+            
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            currentIndex = index;
         }
-        // Pausar video si existe
-        if (lightboxContent) {
-            var video = lightboxContent.querySelector('video');
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            // Pausar videos si hay
+            const video = lightboxContent.querySelector('video');
             if (video) {
                 video.pause();
             }
         }
-    }
 
-    function nextLightbox() {
-        if (gallery.length) {
-            index = (index + 1) % gallery.length;
-            renderLightbox();
+        function navigateLightbox(direction) {
+            if (currentItems.length === 0) return;
+
+            let newIndex = currentIndex + direction;
+            if (newIndex < 0) newIndex = currentItems.length - 1;
+            if (newIndex >= currentItems.length) newIndex = 0;
+
+            if (currentItems[newIndex]) {
+                openLightbox(newIndex);
+            }
         }
-    }
 
-    function prevLightbox() {
-        if (gallery.length) {
-            index = (index - 1 + gallery.length) % gallery.length;
-            renderLightbox();
+        // Event listeners de la lightbox
+        if (closeBtnLightbox) {
+            closeBtnLightbox.addEventListener('click', closeLightbox);
         }
-    }
-
-    // Evento de clic en items del portafolio - CORREGIDO
-    items.forEach(function (item) {
-        item.addEventListener('click', function (e) { // CAMBIADO: e como parámetro
-            // Si el clic fue en el botón de play o en el video, no abrir lightbox
-            if (e.target.closest('.play-icon')) return;
-            if (e.target.tagName === 'VIDEO') return;
-
-            var visible = items.filter(function (el) {
-                return el.style.display !== 'none';
+        
+        if (prevBtnLightbox) {
+            prevBtnLightbox.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navigateLightbox(-1);
             });
-
-            var collection = visible.map(function (el) {
-                return {
-                    src: el.getAttribute('data-src'),
-                    title: el.getAttribute('data-title') || 'Proyecto',
-                    type: el.getAttribute('data-type') || 'image'
-                };
+        }
+        
+        if (nextBtnLightbox) {
+            nextBtnLightbox.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navigateLightbox(1);
             });
+        }
 
-            var startIndex = visible.indexOf(this); // CAMBIADO: this en lugar de item
-            if (startIndex !== -1) openLightbox(startIndex, collection);
+        // Cerrar con teclas
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
         });
-    });
 
-    if (closeBtnLightbox) {
-        closeBtnLightbox.addEventListener('click', closeLightbox);
-    }
-
-    if (prevBtnLightbox) {
-        prevBtnLightbox.addEventListener('click', function (e) {
-            e.stopPropagation();
-            prevLightbox();
-        });
-    }
-
-    if (nextBtnLightbox) {
-        nextBtnLightbox.addEventListener('click', function (e) {
-            e.stopPropagation();
-            nextLightbox();
-        });
-    }
-
-    if (lightbox) {
+        // Cerrar al hacer clic fuera del contenido
         lightbox.addEventListener('click', function (e) {
-            if (e.target === lightbox) closeLightbox();
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
         });
     }
-
-    document.addEventListener('keydown', function (e) {
-        if (!lightbox || !lightbox.classList.contains('open')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') nextLightbox();
-        if (e.key === 'ArrowLeft') prevLightbox();
-    });
 
 })();
