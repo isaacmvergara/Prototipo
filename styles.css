@@ -98,21 +98,97 @@
     display: none; /* Oculta el texto GV */
 }
 
-/* Versión móvil - ajustar tamaño */
-@media (max-width: 768px) {
-    .logo-img {
-        height: 35px;
-    }
-    
-    .logo-text {
-        font-size: 1rem;
-    }
-    
-    .logo-sub {
-        font-size: 0.55rem;
+/* ============================================
+   LOGO "SO WEIRD" - OPTIMIZADO PARA MÓVIL
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0; /* Evita que el logo se encoja */
+}
+
+.logo-text-so-weird {
+    font-family: 'Nova Square', 'Inter', 'Arial Black', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+/* Efecto hover solo en desktop */
+@media (min-width: 769px) {
+    .logo:hover .logo-text-so-weird {
+        color: var(--primary);
+        transform: scale(1.02);
     }
 }
-html { scroll-behavior: smooth; }
+
+/* Versión con subtexto */
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-sub-so-weird {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* ============================================
+   RESPONSIVE - AJUSTES PARA MÓVIL
+   ============================================ */
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+    .logo-text-so-weird {
+        font-size: 1.3rem;
+    }
+    
+    .logo-sub-so-weird {
+        font-size: 0.45rem;
+    }
+}
+
+/* Móviles medianos */
+@media (max-width: 600px) {
+    .logo-text-so-weird {
+        font-size: 1.1rem;
+        letter-spacing: 0.03em;
+    }
+    
+    .logo-sub-so-weird {
+        font-size: 0.4rem;
+        letter-spacing: 0.1em;
+        margin-top: 1px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 400px) {
+    .logo-text-so-weird {
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+    }
+    
+    .logo-sub-so-weird {
+        display: none; /* Oculta el subtexto en móviles muy pequeños */
+    }
+}
 
 body {
     font-family: var(--font-body);
