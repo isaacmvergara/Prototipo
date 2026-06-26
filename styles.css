@@ -21,7 +21,97 @@
     --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
+/* ============================================
+   LOGO CON IMAGEN
+   ============================================ */
 
+/* Opción 1: Logo solo imagen */
+.logo-img {
+    height: 45px;
+    width: auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* Opción 2: Logo imagen con texto */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+}
+
+/* Opción 3: Logo imagen con texto y subtítulo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+}
+
+.logo-sub {
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Logo en el footer (si también quieres cambiarlo) */
+.logo-mark.big {
+    display: none; /* Oculta el texto GV */
+}
+
+/* Versión móvil - ajustar tamaño */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .logo-sub {
+        font-size: 0.55rem;
+    }
+}
 html { scroll-behavior: smooth; }
 
 body {
